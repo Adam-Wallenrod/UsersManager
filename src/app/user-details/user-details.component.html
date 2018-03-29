@@ -1,0 +1,56 @@
+<div>
+  <nav>
+    <button class="btn btn-outline-primary" routerLink="/users">Cancel</button>
+  </nav>
+  <nav>
+    <button class="btn btn-outline-primary" routerLink="/user-edit/{{ user?.id }}">Edit</button>
+  </nav>
+</div>
+
+<div class="userRow">
+  <div class="left">id: </div>
+  <div class="right">{{ user?.id }}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">name: </div>
+  <div class="right">{{user?.name}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">surname: </div>
+  <div class="right">{{user?.surname}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">sex: </div>
+  <div class="right">{{user?.sex}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">city: </div>
+  <div class="right">{{user?.city}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">country: </div>
+  <div class="right">{{user?.country}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">humidity: </div>
+  <div class="right">{{humidity?.query?.results?.channel?.atmosphere?.humidity}}</div>
+  <div style ="clear:both"></div>
+</div>
+
+<div class="userRow">
+  <div class="left">temperature: </div>
+  <div class="right">{{temperature?.query?.results?.channel?.item?.condition?.temp}}&deg; C</div>
+  <div style ="clear:both"></div>
+</div>

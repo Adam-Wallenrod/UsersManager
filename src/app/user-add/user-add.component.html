@@ -1,0 +1,48 @@
+
+<div>
+  <nav>
+    <button  class="btn btn-outline-primary" routerLink="/users">Cancel</button>
+  </nav>
+</div>
+
+<form [formGroup] = "formdata" (ngSubmit) = "onClickSave(formdata.value)" >
+
+  <div>
+    <input type = "text" name = "name" placeholder = "name2" formControlName = "name">
+    <div class="formRequired" *ngIf="name.errors?.minlength"><i>At least 5 characters long</i></div>
+    <div class="formRequired" *ngIf="name.errors?.required"><i>Name required</i></div>
+  </div>
+  <div>
+    <input type = "text" name = "surname" placeholder = "surname" formControlName = "surname">
+    <div class="formRequired" *ngIf="surname.errors?.minlength"><i>At least 5 characters long</i></div>
+    <div class="formRequired" *ngIf="surname.errors?.required"><i>Surname required</i></div>
+  </div>
+
+  <div>
+     <select name="sex" placeholder = "sex" formControlName="sex"  >
+       <option value="Male" >Male</option>
+       <option value="Female" >Female</option>
+       <option value="Other" >Other</option>
+     </select>
+     <div class="formRequired" *ngIf="sex.errors?.required"><i>Sex required</i></div>
+   </div>
+
+  <div>
+     <input type = "text" name = "city"  placeholder = "city" formControlName = "city">
+     <div class="formRequired" *ngIf="city.errors?.required"><i>City required</i></div>
+   </div>
+
+   <div>
+      <select name="country" placeholder = "country" formControlName="country"  >
+        <option *ngFor="let country of countries" [value]="country.name" >{{ country.name }}</option>
+      </select>
+      <div class="formRequired" *ngIf="country.errors?.required"><i>Country required</i></div>
+    </div>
+
+    <div>
+      <input class="btn btn-outline-primary" type = "submit" [disabled] = "!formdata.valid" value = "Save">
+    </div>
+    <div *ngIf="id > 0">
+      <button class="btn btn-outline-primary" (click)="deleteUser()">Delete</button>
+    </div>
+</form>

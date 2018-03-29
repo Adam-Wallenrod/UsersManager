@@ -1,0 +1,10 @@
+<div>
+  <nav>
+    <button class="btn btn-outline-primary" routerLink="/user-add"> Add user</button>
+  </nav>
+</div>
+
+<div *ngFor="let user of users" class="userRow">
+     <a routerLink="/user-details/{{user.id}}"> id: {{ user.id }} name: {{user.name}} surname: {{user.surname}}</a>
+     <br>
+</div>
